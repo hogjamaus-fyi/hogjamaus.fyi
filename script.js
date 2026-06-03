@@ -1,43 +1,45 @@
 const supportedSmileys = [
-  "😀", "😁", "😂", "🤣", "😃", "😄", "😅", "😆", "😉", "😊",
-  "😋", "😎", "😍", "😘", "😗", "😙", "😚", "🙂", "🤗", "🤩",
-  "🤔", "🤨", "😐", "😑", "😶", "🙄", "😏", "😣", "😥", "😮",
-  "🤐", "😯", "😪", "😫", "😴", "😌", "😛", "😜", "😝", "🤤",
-  "😒", "😓", "😔", "😕", "🙃", "🫠", "🤑", "😲", "☹️", "🙁",
-  "😖", "😞", "😟", "😤", "😢", "😭", "😦", "😧", "😨", "😩",
-  "🤯", "😬", "😰", "😱", "🥵", "🥶", "😳", "🤪", "😵", "😵‍💫",
-  "😡", "😠", "🤬", "😷", "🤒", "🤕", "🤢", "🤮", "🤧", "😇",
-  "🥳", "🥴", "🥺", "🤠", "🤡", "🤥", "🤫", "🤭", "🫢", "🫣",
-  "🫡", "🤓", "🧐", "😈", "👿", "👹", "👺", "💀", "☠️", "👻",
-  "👽", "👾", "🤖", "😺", "😸", "😹", "😻", "😼", "😽", "🙀",
-  "😿", "😾", "🫤", "🫥", "🫨", "🥸", "☺️", "😮‍💨", "😶‍🌫️"
+  "😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😂", "🙂", "🙃",
+  "🫠", "😉", "😊", "😇", "🥰", "😍", "🤩", "😘", "😗", "☺",
+  "😚", "😙", "🥲", "😋", "😛", "😜", "🤪", "😝", "🤑", "🤗",
+  "🤭", "🫢", "🫣", "🤫", "🤔", "🫡", "🤐", "🤨", "😐", "😑",
+  "😶", "🫥", "😶‍🌫️", "😏", "😒", "🙄", "😬", "😮‍💨", "🤥", "🫨",
+  "🙂‍↔️", "🙂‍↕️", "😌", "😔", "😪", "🤤", "😴", "🫩", "😷", "🤒",
+  "🤕", "🤢", "🤮", "🤧", "🥵", "🥶", "🥴", "😵", "😵‍💫", "🤯",
+  "🤠", "🥳", "🥸", "😎", "🤓", "🧐", "😕", "🫤", "😟", "🙁",
+  "☹", "😮", "😯", "😲", "😳", "🥺", "🥹", "😦", "😧", "😨",
+  "😰", "😥", "😢", "😭", "😱", "😖", "😞", "😓", "😩", "😫",
+  "🥱", "😤", "😡", "😠", "🤬", "😈", "👿", "💀", "☠️", "💩",
+  "🤡", "👹", "👺", "👻", "👽", "👾", "🤖", "😺", "😸", "😹",
+  "😻", "😼", "😽", "🙀", "😿", "😾", "🙈", "🙉", "🙊"
 ];
 
 const profileEntries = [
   ["😀", "happy", "soft"], ["😁", "happy", "big"], ["😂", "laugh", "big"], ["🤣", "laugh", "big"], ["😃", "happy", "soft"],
   ["😄", "happy", "soft"], ["😅", "laugh", "uneasy"], ["😆", "laugh", "big"], ["😉", "wink", "soft"], ["😊", "happy", "soft"],
-  ["😋", "tongue", "tongue"], ["😎", "cool", "cool"], ["😍", "love", "love"], ["😘", "kiss", "love"], ["😗", "kiss", "soft"],
-  ["😙", "kiss", "soft"], ["😚", "kiss", "soft"], ["🙂", "happy", "soft"], ["🤗", "party", "party"], ["🤩", "party", "party"],
+  ["😋", "tongue", "tongue"], ["😎", "cool", "cool"], ["😍", "love", "love"], ["🥰", "love", "love"], ["😘", "kiss", "love"], ["😗", "kiss", "soft"],
+  ["😙", "kiss", "soft"], ["😚", "kiss", "soft"], ["🙂", "happy", "soft"], ["🥲", "sad", "soft"], ["🤗", "party", "party"], ["🤩", "party", "party"],
   ["🤔", "thinking", "think"], ["🤨", "thinking", "think"], ["😐", "neutral", "blank"], ["😑", "neutral", "blank"], ["😶", "neutral", "blank"],
   ["🙄", "thinking", "rolling"], ["😏", "neutral", "smirk"], ["😣", "sad", "uneasy"], ["😥", "cry", "cry"], ["😮", "surprised", "soft"],
-  ["🤐", "neutral", "mask"], ["😯", "surprised", "soft"], ["😪", "sleepy", "blank"], ["😫", "sad", "uneasy"], ["😴", "sleepy", "blank"],
+  ["🤐", "neutral", "mask"], ["😯", "surprised", "soft"], ["😪", "sleepy", "blank"], ["😫", "sad", "uneasy"], ["😴", "sleepy", "blank"], ["🫩", "sleepy", "blank"],
   ["😌", "sleepy", "soft"], ["😛", "tongue", "tongue"], ["😜", "wink", "tongue"], ["😝", "tongue", "tongue"], ["🤤", "dizzy", "uneasy"],
   ["😒", "neutral", "smirk"], ["😓", "fear", "fear"], ["😔", "sad", "sad"], ["😕", "sad", "sad"], ["🙃", "sad", "upside"],
   ["🫠", "sad", "melt"], ["🤑", "party", "money"], ["😲", "surprised", "soft"], ["☹️", "sad", "sad"], ["🙁", "sad", "sad"],
   ["😖", "sad", "uneasy"], ["😞", "sad", "sad"], ["😟", "sad", "sad"], ["😤", "angry", "angry"], ["😢", "cry", "cry"],
-  ["😭", "cry", "cry"], ["😦", "fear", "fear"], ["😧", "fear", "fear"], ["😨", "fear", "fear"], ["😩", "sad", "uneasy"],
+  ["😭", "cry", "cry"], ["😦", "fear", "fear"], ["😧", "fear", "fear"], ["😨", "fear", "fear"], ["😩", "sad", "uneasy"], ["🥱", "sleepy", "blank"],
   ["🤯", "shocked", "hot"], ["😬", "shocked", "uneasy"], ["😰", "fear", "fear"], ["😱", "shocked", "fear"], ["🥵", "shocked", "hot"],
   ["🥶", "shocked", "cold"], ["😳", "surprised", "hot"], ["🤪", "dizzy", "dizzy"], ["😵", "shocked", "dizzy"], ["😵‍💫", "shocked", "dizzy"],
   ["😡", "angry", "angry"], ["😠", "angry", "angry"], ["🤬", "angry", "angry"], ["😷", "mask", "mask"], ["🤒", "mask", "hot"],
   ["🤕", "mask", "uneasy"], ["🤢", "mask", "uneasy"], ["🤮", "mask", "uneasy"], ["🤧", "mask", "cold"], ["😇", "happy", "halo"],
+  ["💩", "dead", "uneasy"],
   ["🥳", "party", "party"], ["🥴", "dizzy", "dizzy"], ["🥺", "sad", "soft"], ["🤠", "happy", "soft"], ["🤡", "kiss", "party"],
-  ["🤥", "neutral", "smirk"], ["🤫", "neutral", "blank"], ["🤭", "neutral", "soft"], ["🫢", "surprised", "blank"], ["🫣", "fear", "blank"],
+  ["🤥", "neutral", "smirk"], ["🤫", "neutral", "blank"], ["🤭", "neutral", "soft"], ["🫢", "surprised", "blank"], ["🫣", "fear", "blank"], ["🙂‍↔️", "neutral", "soft"], ["🙂‍↕️", "neutral", "soft"],
   ["🫡", "neutral", "soft"], ["🤓", "cool", "cool"], ["🧐", "thinking", "think"], ["😈", "angry", "angry"], ["👿", "angry", "angry"],
-  ["👹", "angry", "angry"], ["👺", "angry", "angry"], ["💀", "dead", "dead"], ["☠️", "dead", "dead"], ["👻", "dead", "soft"],
+  ["👹", "angry", "angry"], ["👺", "angry", "angry"], ["💀", "dead", "dead"], ["☠️", "dead", "dead"], ["👻", "dead", "soft"], ["🎃", "party", "party"],
   ["👽", "dead", "alien"], ["👾", "dead", "robot"], ["🤖", "dead", "robot"], ["😺", "happy", "soft"], ["😸", "happy", "big"],
-  ["😹", "laugh", "big"], ["😻", "love", "love"], ["😼", "neutral", "smirk"], ["😽", "kiss", "love"], ["🙀", "shocked", "fear"],
+  ["😹", "laugh", "big"], ["😻", "love", "love"], ["😼", "neutral", "smirk"], ["😽", "kiss", "love"], ["🙀", "shocked", "fear"], ["🙈", "fear", "blank"], ["🙉", "fear", "blank"], ["🙊", "neutral", "blank"],
   ["😿", "cry", "cry"], ["😾", "angry", "angry"], ["🫤", "sad", "smirk"], ["🫥", "neutral", "blank"], ["🫨", "shocked", "dizzy"],
-  ["🥸", "cool", "cool"], ["☺️", "happy", "soft"], ["😮‍💨", "sleepy", "soft"], ["😶‍🌫️", "sleepy", "blank"]
+  ["🥸", "cool", "cool"], ["☺️", "happy", "soft"], ["😮‍💨", "sleepy", "soft"], ["😶‍🌫️", "sleepy", "blank"], ["🥹", "cry", "soft"], ["💋", "kiss", "love"], ["💌", "love", "love"]
 ];
 
 const faceEl = document.getElementById("sadFace");
@@ -45,6 +47,8 @@ const sadMacEl = document.getElementById("sadMac");
 const inputEl = document.getElementById("emojiInput");
 const statusEl = document.getElementById("emojiStatus");
 const themeToggleEl = document.getElementById("themeToggle");
+const shareButtonEl = document.getElementById("shareButton");
+const shareStatusEl = document.getElementById("shareStatus");
 
 const overrideKeywordPhrases = [
   "error",
@@ -114,8 +118,13 @@ const emojiProfiles = new Map(
 const segmenter = typeof Intl !== "undefined" && Intl.Segmenter
   ? new Intl.Segmenter(undefined, { granularity: "grapheme" })
   : null;
+const expectedSupportedEmojiCount = 129;
+const supportedByLength = Array.from(supportedSet).sort((a, b) => b.length - a.length);
 
 let cycleTimer = null;
+
+syncSeoUrlMeta();
+initializeShareButton();
 
 if (inputEl && faceEl && statusEl) {
   if (!inputEl.value.trim()) {
@@ -150,6 +159,93 @@ if (themeToggleEl) {
       themeToggleEl.setAttribute("aria-label", "Switch to color theme");
     }
   });
+}
+
+function syncSeoUrlMeta() {
+  const canonicalUrl = getCanonicalUrl();
+  const canonicalEl = document.querySelector('link[rel="canonical"]');
+  const ogUrlEl = document.querySelector('meta[property="og:url"]');
+  const twitterUrlEl = document.querySelector('meta[name="twitter:url"]');
+
+  if (canonicalEl) {
+    canonicalEl.setAttribute("href", canonicalUrl);
+  }
+
+  if (ogUrlEl) {
+    ogUrlEl.setAttribute("content", canonicalUrl);
+  }
+
+  if (twitterUrlEl) {
+    twitterUrlEl.setAttribute("content", canonicalUrl);
+  }
+}
+
+function initializeShareButton() {
+  if (!shareButtonEl) {
+    return;
+  }
+
+  shareButtonEl.addEventListener("click", async () => {
+    const shareData = {
+      title: document.title,
+      text: "Check out this retro interactive 404 on hogjamaus.fyi.",
+      url: getCanonicalUrl()
+    };
+
+    setShareStatus("");
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        setShareStatus("Shared successfully.");
+        return;
+      }
+
+      await fallbackCopyUrl(shareData.url);
+      setShareStatus("Link copied to clipboard.");
+    } catch (error) {
+      if (isAbortError(error)) {
+        setShareStatus("Share cancelled.");
+        return;
+      }
+
+      setShareStatus("Sharing unavailable right now.");
+    }
+  });
+}
+
+function getCanonicalUrl() {
+  const url = new URL(window.location.href);
+  url.hash = "";
+  url.search = "";
+  return url.toString();
+}
+
+async function fallbackCopyUrl(url) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    await navigator.clipboard.writeText(url);
+    return;
+  }
+
+  const input = document.createElement("input");
+  input.value = url;
+  input.setAttribute("readonly", "readonly");
+  input.style.position = "absolute";
+  input.style.left = "-9999px";
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}
+
+function isAbortError(error) {
+  return error && typeof error === "object" && error.name === "AbortError";
+}
+
+function setShareStatus(message) {
+  if (shareStatusEl) {
+    shareStatusEl.textContent = message;
+  }
 }
 
 function runMimic(inputText) {
@@ -305,9 +401,12 @@ function buildDetailProfile(emoji, base) {
     "😅": { mouth: "mouth-smile", extra: "extra-sweat" },
     "😉": { eyes: "eyes-squint", brow: "brow-tilt" },
     "😍": { eyes: "eyes-wide", extra: "extra-none" },
+    "🥰": { eyes: "eyes-wide", mouth: "mouth-smile", extra: "extra-stars" },
     "😘": { mouth: "mouth-kiss", extra: "extra-none" },
     "🤔": { brow: "brow-tilt", mouth: "mouth-zigzag" },
     "🙄": { eyes: "eyes-wide", brow: "brow-tilt" },
+    "😐": { eyes: "eyes-dot", mouth: "mouth-zigzag", brow: "brow-tilt", extra: "extra-none" },
+    "😋": { eyes: "eyes-dot", mouth: "mouth-kiss", brow: "brow-raised", extra: "extra-tongue" },
     "😬": { mouth: "mouth-zigzag" },
     "😷": { extra: "extra-mask" },
     "🤒": { extra: "extra-mask" },
@@ -331,10 +430,18 @@ function buildDetailProfile(emoji, base) {
     "🤪": { eyes: "eyes-x", extra: "extra-stars" },
     "😵": { eyes: "eyes-x", extra: "extra-stars" },
     "😵‍💫": { eyes: "eyes-x", extra: "extra-stars" },
+    "🥱": { eyes: "eyes-closed", mouth: "mouth-open", extra: "extra-none" },
     "🙃": { eyes: "eyes-dot", mouth: "mouth-frown", brow: "brow-raised" },
+    "💩": { eyes: "eyes-dot", mouth: "mouth-zigzag", extra: "extra-none" },
     "💀": { eyes: "eyes-x", mouth: "mouth-zigzag" },
     "☠️": { eyes: "eyes-x", mouth: "mouth-zigzag" },
-    "🤖": { eyes: "eyes-wide", mouth: "mouth-zigzag", extra: "extra-none" }
+    "🎃": { eyes: "eyes-wide", mouth: "mouth-grin", extra: "extra-none" },
+    "🙈": { eyes: "eyes-closed", mouth: "mouth-smile", extra: "extra-none" },
+    "🙉": { eyes: "eyes-closed", mouth: "mouth-smile", extra: "extra-none" },
+    "🙊": { eyes: "eyes-dot", mouth: "mouth-zigzag", extra: "extra-none" },
+    "🤖": { eyes: "eyes-wide", mouth: "mouth-zigzag", extra: "extra-none" },
+    "💋": { eyes: "eyes-closed", mouth: "mouth-kiss", extra: "extra-none" },
+    "💌": { eyes: "eyes-dot", mouth: "mouth-kiss", extra: "extra-none" }
   }[emoji];
 
   if (override) {
@@ -350,17 +457,54 @@ function findSupportedEmojis(text) {
     return [];
   }
 
-  const graphemes = segmenter
-    ? Array.from(segmenter.segment(trimmed), (entry) => entry.segment)
-    : Array.from(trimmed);
+  if (segmenter) {
+    const graphemes = Array.from(segmenter.segment(trimmed), (entry) => entry.segment);
+    return graphemes.filter((grapheme) => supportedSet.has(normalizeEmoji(grapheme)));
+  }
 
-  return graphemes.filter((grapheme) => supportedSet.has(normalizeEmoji(grapheme)));
+  // Fallback parser for browsers without Intl.Segmenter.
+  // It greedily matches known emojis (including ZWJ sequences) so entries such as 😵‍💫 and 😶‍🌫️ are detected reliably.
+  return scanSupportedEmojis(trimmed);
+}
+
+function scanSupportedEmojis(text) {
+  const normalizedText = normalizeEmoji(text);
+  const matches = [];
+  let i = 0;
+
+  while (i < normalizedText.length) {
+    let matched = "";
+
+    for (const emoji of supportedByLength) {
+      if (normalizedText.startsWith(emoji, i)) {
+        matched = emoji;
+        break;
+      }
+    }
+
+    if (matched) {
+      matches.push(matched);
+      i += matched.length;
+      continue;
+    }
+
+    const codePoint = normalizedText.codePointAt(i);
+    i += codePoint > 0xffff ? 2 : 1;
+  }
+
+  return matches;
 }
 
 function normalizeEmoji(emoji) {
   return emoji.replace(/\uFE0F/g, "");
 }
 
-if (emojiProfiles.size !== supportedSet.size) {
+const missingProfiles = Array.from(supportedSet).filter((emoji) => !emojiProfiles.has(emoji));
+
+if (missingProfiles.length > 0 && statusEl) {
   statusEl.textContent = "Emoji profile map is incomplete. Please refresh after updating script mapping.";
+}
+
+if (supportedSet.size !== expectedSupportedEmojiCount && statusEl) {
+  statusEl.textContent = "Supported emoji list count is not 119. Please verify the first 119 browser emoji entries.";
 }

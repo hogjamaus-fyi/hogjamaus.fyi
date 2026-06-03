@@ -3,7 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+		<title>404 Not Found | hogjamaus.fyi</title>
+		<meta name="description" content="A custom retro 404 page on hogjamaus.fyi with an interactive emoji-powered Sad Mac face.">
+		<meta name="robots" content="noindex,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+		<meta name="author" content="hogjamaus.fyi">
+		<link rel="canonical" href="https://hogjamaus.fyi/404">
+
+		<meta property="og:site_name" content="hogjamaus.fyi">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" content="404 Not Found | hogjamaus.fyi">
+		<meta property="og:description" content="A custom retro 404 page with an interactive emoji-powered Sad Mac face.">
+		<meta property="og:url" content="https://hogjamaus.fyi/404">
+		<meta property="og:image" content="https://hogjamaus.fyi/og-image.svg">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta property="og:image:alt" content="Retro Sad Mac style 404 page">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="404 Not Found | hogjamaus.fyi">
+		<meta name="twitter:description" content="A custom retro 404 page with an interactive emoji-powered Sad Mac face.">
+		<meta name="twitter:image" content="https://hogjamaus.fyi/og-image.svg">
+		<meta name="twitter:image:alt" content="Retro Sad Mac style 404 page">
+		<meta name="twitter:url" content="https://hogjamaus.fyi/404">
+
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "404 Not Found | hogjamaus.fyi",
+			"description": "A custom retro 404 page with an interactive emoji-powered Sad Mac face.",
+			"url": "https://hogjamaus.fyi/404",
+			"isPartOf": {
+				"@type": "WebSite",
+				"name": "hogjamaus.fyi",
+				"url": "https://hogjamaus.fyi"
+			},
+			"inLanguage": "en"
+		}
+		</script>
+		<link rel="icon" href="/favicon.ico" sizes="any">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="theme-color" content="#0f0f0f">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-color">
@@ -14,8 +59,10 @@
 				<div class="emoji-row">
 					<input id="emojiInput" class="emoji-input" type="text" inputmode="text" aria-label="Emoji input" aria-describedby="emojiStatus">
 					<button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to monochrome theme">Monochrome</button>
+					<button id="shareButton" class="share-button" type="button" aria-label="Share this page">Share</button>
 				</div>
 				<p class="emoji-status" id="emojiStatus" aria-live="polite"></p>
+				<p class="share-status" id="shareStatus" aria-live="polite"></p>
 			</div>
 			<div class="sad-mac" id="sadMac" aria-hidden="true">
 				<div class="sad-face is-blank" id="sadFace">

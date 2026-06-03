@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# This page is intentionally noindex (set via meta robots in HTML).
+Sitemap: https://hogjamaus.fyi/sitemap.xml
