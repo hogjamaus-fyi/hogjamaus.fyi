@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>404 Not Found | hogjamaus.fyi</title>
-		<meta name="description" content="A custom retro 404 page on hogjamaus.fyi with an interactive emoji-powered Sad Mac face.">
+		<meta name="description" content="A custom retro 404 page on hogjamaus.fyi with a classic Sad Mac face.">
 		<meta name="robots" content="noindex,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 		<meta name="author" content="hogjamaus.fyi">
 		<link rel="canonical" href="https://hogjamaus.fyi/404">
@@ -13,16 +13,19 @@
 		<meta property="og:type" content="website">
 		<meta property="og:locale" content="en_US">
 		<meta property="og:title" content="404 Not Found | hogjamaus.fyi">
-		<meta property="og:description" content="A custom retro 404 page with an interactive emoji-powered Sad Mac face.">
+		<meta property="og:description" content="A custom retro 404 page with a classic Sad Mac face.">
 		<meta property="og:url" content="https://hogjamaus.fyi/404">
 		<meta property="og:image" content="https://hogjamaus.fyi/og-image.svg">
+		<meta property="og:image:secure_url" content="https://hogjamaus.fyi/og-image.svg">
+		<meta property="og:image:type" content="image/svg+xml">
 		<meta property="og:image:width" content="1200">
 		<meta property="og:image:height" content="630">
 		<meta property="og:image:alt" content="Retro Sad Mac style 404 page">
+		<meta property="og:logo" content="https://hogjamaus.fyi/favicon.svg">
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="404 Not Found | hogjamaus.fyi">
-		<meta name="twitter:description" content="A custom retro 404 page with an interactive emoji-powered Sad Mac face.">
+		<meta name="twitter:description" content="A custom retro 404 page with a classic Sad Mac face.">
 		<meta name="twitter:image" content="https://hogjamaus.fyi/og-image.svg">
 		<meta name="twitter:image:alt" content="Retro Sad Mac style 404 page">
 		<meta name="twitter:url" content="https://hogjamaus.fyi/404">
@@ -32,12 +35,21 @@
 			"@context": "https://schema.org",
 			"@type": "WebPage",
 			"name": "404 Not Found | hogjamaus.fyi",
-			"description": "A custom retro 404 page with an interactive emoji-powered Sad Mac face.",
+			"description": "A custom retro 404 page with a classic Sad Mac face.",
 			"url": "https://hogjamaus.fyi/404",
+			"image": "https://hogjamaus.fyi/og-image.svg",
 			"isPartOf": {
 				"@type": "WebSite",
 				"name": "hogjamaus.fyi",
-				"url": "https://hogjamaus.fyi"
+				"url": "https://hogjamaus.fyi",
+				"publisher": {
+					"@type": "Organization",
+					"name": "hogjamaus.fyi",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://hogjamaus.fyi/favicon.svg"
+					}
+				}
 			},
 			"inLanguage": "en"
 		}
@@ -59,10 +71,8 @@
 				<div class="emoji-row">
 					<input id="emojiInput" class="emoji-input" type="text" inputmode="text" aria-label="Emoji input" aria-describedby="emojiStatus">
 					<button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to monochrome theme">Monochrome</button>
-					<button id="shareButton" class="share-button" type="button" aria-label="Share this page">Share</button>
 				</div>
 				<p class="emoji-status" id="emojiStatus" aria-live="polite"></p>
-				<p class="share-status" id="shareStatus" aria-live="polite"></p>
 			</div>
 			<div class="sad-mac" id="sadMac" aria-hidden="true">
 				<div class="sad-face is-blank" id="sadFace">
@@ -99,6 +109,20 @@
 				<span class="d"></span>
 			</figcaption>
 			<p class="subtext">The page you requested does not exist.</p>
+			<div class="share-wrap" id="shareWrap">
+				<nav class="share-menu" id="shareMenu" aria-label="Share links">
+					<a class="share-menu-item" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fhogjamaus.fyi&text=Check%20out%20hogjamaus.fyi" target="_blank" rel="noopener noreferrer">X</a>
+					<a class="share-menu-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhogjamaus.fyi" target="_blank" rel="noopener noreferrer">Facebook</a>
+					<a class="share-menu-item" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fhogjamaus.fyi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+					<a class="share-menu-item" href="https://www.reddit.com/submit?url=https%3A%2F%2Fhogjamaus.fyi&title=Check%20out%20hogjamaus.fyi" target="_blank" rel="noopener noreferrer">Reddit</a>
+					<a class="share-menu-item" href="https://api.whatsapp.com/send?text=Check%20out%20hogjamaus.fyi%20https%3A%2F%2Fhogjamaus.fyi" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+					<a class="share-menu-item" href="https://t.me/share/url?url=https%3A%2F%2Fhogjamaus.fyi&text=Check%20out%20hogjamaus.fyi" target="_blank" rel="noopener noreferrer">Telegram</a>
+					<a class="share-menu-item" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fhogjamaus.fyi&description=Check%20out%20hogjamaus.fyi" target="_blank" rel="noopener noreferrer">Pinterest</a>
+					<a class="share-menu-item" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https%3A%2F%2Fhogjamaus.fyi&title=Check%20out%20hogjamaus.fyi&caption=Check%20out%20hogjamaus.fyi" target="_blank" rel="noopener noreferrer">Tumblr</a>
+					<a class="share-menu-item" href="https://www.threads.net/intent/post?text=Check%20out%20hogjamaus.fyi%20https%3A%2F%2Fhogjamaus.fyi" target="_blank" rel="noopener noreferrer">Threads</a>
+					<a class="share-menu-item" href="mailto:?subject=Check%20out%20hogjamaus.fyi&body=https%3A%2F%2Fhogjamaus.fyi">Email</a>
+				</nav>
+			</div>
 		</figure>
 	</main>
 	<script src="script.js"></script>

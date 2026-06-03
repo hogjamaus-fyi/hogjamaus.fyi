@@ -47,8 +47,6 @@ const sadMacEl = document.getElementById("sadMac");
 const inputEl = document.getElementById("emojiInput");
 const statusEl = document.getElementById("emojiStatus");
 const themeToggleEl = document.getElementById("themeToggle");
-const shareButtonEl = document.getElementById("shareButton");
-const shareStatusEl = document.getElementById("shareStatus");
 
 const overrideKeywordPhrases = [
   "error",
@@ -124,7 +122,6 @@ const supportedByLength = Array.from(supportedSet).sort((a, b) => b.length - a.l
 let cycleTimer = null;
 
 syncSeoUrlMeta();
-initializeShareButton();
 
 if (inputEl && faceEl && statusEl) {
   if (!inputEl.value.trim()) {
@@ -180,72 +177,11 @@ function syncSeoUrlMeta() {
   }
 }
 
-function initializeShareButton() {
-  if (!shareButtonEl) {
-    return;
-  }
-
-  shareButtonEl.addEventListener("click", async () => {
-    const shareData = {
-      title: document.title,
-      text: "Check out this retro interactive 404 on hogjamaus.fyi.",
-      url: getCanonicalUrl()
-    };
-
-    setShareStatus("");
-
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-        setShareStatus("Shared successfully.");
-        return;
-      }
-
-      await fallbackCopyUrl(shareData.url);
-      setShareStatus("Link copied to clipboard.");
-    } catch (error) {
-      if (isAbortError(error)) {
-        setShareStatus("Share cancelled.");
-        return;
-      }
-
-      setShareStatus("Sharing unavailable right now.");
-    }
-  });
-}
-
 function getCanonicalUrl() {
   const url = new URL(window.location.href);
   url.hash = "";
   url.search = "";
   return url.toString();
-}
-
-async function fallbackCopyUrl(url) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    await navigator.clipboard.writeText(url);
-    return;
-  }
-
-  const input = document.createElement("input");
-  input.value = url;
-  input.setAttribute("readonly", "readonly");
-  input.style.position = "absolute";
-  input.style.left = "-9999px";
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand("copy");
-  document.body.removeChild(input);
-}
-
-function isAbortError(error) {
-  return error && typeof error === "object" && error.name === "AbortError";
-}
-
-function setShareStatus(message) {
-  if (shareStatusEl) {
-    shareStatusEl.textContent = message;
-  }
 }
 
 function runMimic(inputText) {
