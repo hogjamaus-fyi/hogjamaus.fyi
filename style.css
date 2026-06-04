@@ -11,11 +11,23 @@ body {
 }
 
 .theme-color {
-	background: #111;
+	--page-bg: #111;
+	background: var(--page-bg);
 }
 
-.theme-mono {
-	background: #0f0f0f;
+.theme-mono:not(.theme-color):not(.theme-light) {
+	--page-bg: #0f0f0f;
+	background: var(--page-bg);
+}
+
+.theme-mono:not(.theme-color):not(.theme-light)[data-mono-base="light"] {
+	--page-bg: #f5f5f5;
+	background: var(--page-bg);
+}
+
+.theme-light {
+	--page-bg: #f5f5f5;
+	background: var(--page-bg);
 }
 
 .error-page {
@@ -80,7 +92,10 @@ figcaption span {
 /* II. Sprites */
 /* 1. Sad Mac */
 .sad-mac {
-	background: #fff;
+	--sadmac-bg: #000;
+	--sadmac-fg: #fff;
+	background: var(--sadmac-bg);
+	color: var(--sadmac-fg);
 	margin: 0 auto 7em auto;
 	font-size: 2em;
 	width: 23em;
@@ -88,15 +103,35 @@ figcaption span {
 	position: relative;
 }
 
+.theme-color .sad-mac {
+	--sadmac-bg: #f3f3f3;
+	--sadmac-fg: #111;
+}
+
+.theme-mono .sad-mac {
+	--sadmac-bg: #f3f3f3;
+	--sadmac-fg: #111;
+}
+
+.theme-mono[data-mono-base="light"] .sad-mac {
+	--sadmac-bg: #000;
+	--sadmac-fg: #fff;
+}
+
+.theme-light .sad-mac {
+	--sadmac-bg: #000;
+	--sadmac-fg: #fff;
+}
+
 .sad-face {
-	--face-color: #000;
+	--face-color: var(--sadmac-fg);
 	--cheek-color: transparent;
 	position: absolute;
 	left: 4em;
 	top: 5em;
 	width: 16em;
 	height: 12em;
-	background: #fff;
+	background: var(--sadmac-bg);
 	color: var(--face-color);
 	overflow: hidden;
 	pointer-events: none;
@@ -108,7 +143,8 @@ figcaption span {
 	top: 17em;
 	width: 16em;
 	height: 1em;
-	background: #000;
+	color: var(--sadmac-fg);
+	background: currentColor;
 	pointer-events: none;
 }
 
@@ -130,7 +166,7 @@ figcaption span {
 }
 
 .is-blank {
-	background: #fff;
+	background: var(--sadmac-bg);
 }
 
 .face-eye,
@@ -711,7 +747,7 @@ figcaption span {
 .theme-mono .sad-face {
 	--face-color: #111;
 	--cheek-color: #9a9a9a;
-	background: #fff;
+	background: #f3f3f3;
 	filter: grayscale(1);
 }
 
@@ -720,7 +756,7 @@ figcaption span {
 }
 
 .theme-mono .facebox-bottom {
-	background: #111;
+	color: #111;
 }
 
 .accent-big .face-mouth {
@@ -997,7 +1033,7 @@ figcaption span {
 	border: 2px solid #fff;
 	background: #fff;
 	color: #111;
-	font: 700 0.92em/1 "Courier New", Courier, monospace;
+	font: 700 1.84em/1 "Courier New", Courier, monospace;
 	letter-spacing: 0.03em;
 	padding: 0.55em 0.4em;
 }
@@ -1021,9 +1057,114 @@ figcaption span {
 	white-space: nowrap;
 }
 
-.theme-mono .theme-toggle,
-.theme-mono .theme-toggle {
+.theme-mono:not(.theme-color):not(.theme-light) .theme-toggle,
+.theme-mono:not(.theme-color):not(.theme-light) .theme-toggle {
 	background: #fff;
+	color: #111;
+}
+
+.theme-mono:not(.theme-color):not(.theme-light) .page-title,
+.theme-mono:not(.theme-color):not(.theme-light) .pixel-caption,
+.theme-mono:not(.theme-color):not(.theme-light) .subtext,
+.theme-mono:not(.theme-color):not(.theme-light) .emoji-form,
+.theme-mono:not(.theme-color):not(.theme-light) .emoji-status {
+	color: #e8e8e8;
+}
+
+.theme-mono:not(.theme-color):not(.theme-light) .emoji-input {
+	border-color: #cfcfcf;
+	background: #1a1a1a;
+	color: #f2f2f2;
+}
+
+.theme-mono:not(.theme-color):not(.theme-light) .share-menu-item {
+	border-color: #d5d5d5;
+	background: #f2f2f2;
+	color: #111;
+}
+
+.theme-mono:not(.theme-color):not(.theme-light) .share-menu-item:hover,
+.theme-mono:not(.theme-color):not(.theme-light) .share-menu-item:focus-visible {
+	background: #d9d9d9;
+	color: #111;
+}
+
+.theme-light .page-title,
+.theme-light .pixel-caption,
+.theme-light .subtext,
+.theme-light .emoji-form,
+.theme-light .emoji-status,
+.theme-mono[data-mono-base="light"] .page-title,
+.theme-mono[data-mono-base="light"] .pixel-caption,
+.theme-mono[data-mono-base="light"] .subtext,
+.theme-mono[data-mono-base="light"] .emoji-form,
+.theme-mono[data-mono-base="light"] .emoji-status {
+	color: #111;
+}
+
+.theme-light .theme-toggle,
+.theme-mono[data-mono-base="light"] .theme-toggle {
+	border-color: #111;
+	background: #fff;
+	color: #111;
+}
+
+.theme-light .emoji-input,
+.theme-mono[data-mono-base="light"] .emoji-input {
+	border-color: #111;
+	background: #fff;
+	color: #111;
+}
+
+.theme-light .share-menu-item,
+.theme-mono[data-mono-base="light"] .share-menu-item {
+	border-color: #111;
+	background: #111;
+	color: #fff;
+}
+
+.theme-light .share-menu-item:hover,
+.theme-light .share-menu-item:focus-visible,
+.theme-mono[data-mono-base="light"] .share-menu-item:hover,
+.theme-mono[data-mono-base="light"] .share-menu-item:focus-visible {
+	background: #2a2a2a;
+	color: #fff;
+}
+
+.theme-mono.theme-light {
+	--page-bg: #0f0f0f;
+	background: var(--page-bg);
+}
+
+.theme-mono.theme-light .page-title,
+.theme-mono.theme-light .pixel-caption,
+.theme-mono.theme-light .subtext,
+.theme-mono.theme-light .emoji-form,
+.theme-mono.theme-light .emoji-status {
+	color: #e8e8e8;
+}
+
+.theme-mono.theme-light .theme-toggle {
+	border-color: #fff;
+	background: #fff;
+	color: #111;
+}
+
+.theme-mono.theme-light .emoji-input {
+	border-color: #cfcfcf;
+	background: #1a1a1a;
+	color: #f2f2f2;
+}
+
+.theme-mono.theme-light .share-menu-item {
+	border-color: #d5d5d5;
+	background: #f2f2f2;
+	color: #111;
+}
+
+.theme-mono.theme-light .share-menu-item:hover,
+.theme-mono.theme-light .share-menu-item:focus-visible {
+	background: #d9d9d9;
 	color: #111;
 }
 
@@ -1107,5 +1248,13 @@ figcaption span {
 
 	.page-title {
 		font-size: 3.8em;
+	}
+}
+
+@media screen and (max-width: 540px) and (orientation: portrait) {
+	.pixel-caption {
+		height: 24em;
+		row-gap: 2.4em;
+		align-content: flex-start;
 	}
 }
