@@ -565,8 +565,6 @@ const expectedSupportedEmojiCount = 129;
 const supportedByLength = Array.from(supportedSet).sort((a, b) => b.length - a.length);
 
 let cycleTimer = null;
-let isThemeAuto = true;
-let lastNonMonoThemeClass = "theme-color";
 
 const systemThemeMedia = typeof window !== "undefined" && typeof window.matchMedia === "function"
   ? window.matchMedia("(prefers-color-scheme: dark)")
@@ -606,21 +604,21 @@ if (inputEl && faceEl && statusEl) {
 
 if (themeToggleEl) {
   themeToggleEl.addEventListener("click", () => {
-    isThemeAuto = false;
     const isMono = document.body.classList.contains("theme-mono");
 
     if (isMono) {
       document.body.classList.remove("theme-mono");
       document.body.removeAttribute("data-mono-base");
+      setThemeClass(getSystemPreferredThemeClass());
     } else {
       const baseThemeClass = getSystemPreferredThemeClass();
 
-      lastNonMonoThemeClass = baseThemeClass;
       setThemeClass(baseThemeClass);
 
       const monoBase = baseThemeClass === "theme-color" ? "dark" : "light";
       document.body.classList.add("theme-mono");
       document.body.setAttribute("data-mono-base", monoBase);
+      syncThemeMetaColor();
     }
 
     syncThemeToggleLabel();
@@ -628,10 +626,6 @@ if (themeToggleEl) {
 }
 
 function applyAutomaticTheme() {
-  if (!isThemeAuto) {
-    return;
-  }
-
   setThemeClass(getSystemPreferredThemeClass());
 }
 
@@ -644,7 +638,6 @@ function getSystemPreferredThemeClass() {
 }
 
 function setThemeClass(themeClass) {
-  lastNonMonoThemeClass = themeClass;
   document.body.classList.remove("theme-color", "theme-light");
   document.body.classList.add(themeClass);
 
@@ -653,7 +646,22 @@ function setThemeClass(themeClass) {
     document.body.setAttribute("data-mono-base", monoBase);
   }
 
+  syncThemeMetaColor();
   syncThemeToggleLabel();
+}
+
+function syncThemeMetaColor() {
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+  if (!themeColorMeta) {
+    return;
+  }
+
+  const isMono = document.body.classList.contains("theme-mono");
+  const monoBase = document.body.getAttribute("data-mono-base");
+  const isLightTheme = document.body.classList.contains("theme-light") || (isMono && monoBase === "light");
+
+  themeColorMeta.setAttribute("content", isLightTheme ? "#f5f5f5" : "#0f0f0f");
 }
 
 function syncThemeToggleLabel() {

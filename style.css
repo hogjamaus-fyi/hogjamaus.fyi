@@ -11,23 +11,32 @@ body {
 }
 
 .theme-color {
-	--page-bg: #111;
-	background: var(--page-bg);
-}
-
-.theme-mono:not(.theme-color):not(.theme-light) {
 	--page-bg: #0f0f0f;
 	background: var(--page-bg);
-}
-
-.theme-mono:not(.theme-color):not(.theme-light)[data-mono-base="light"] {
-	--page-bg: #f5f5f5;
-	background: var(--page-bg);
+	color-scheme: dark;
 }
 
 .theme-light {
 	--page-bg: #f5f5f5;
 	background: var(--page-bg);
+	color-scheme: light;
+}
+
+.theme-mono {
+	--page-bg: #0f0f0f;
+	background: var(--page-bg);
+}
+
+.theme-mono[data-mono-base="dark"] {
+	--page-bg: #0f0f0f;
+	background: var(--page-bg);
+	color-scheme: dark;
+}
+
+.theme-mono[data-mono-base="light"] {
+	--page-bg: #f5f5f5;
+	background: var(--page-bg);
+	color-scheme: light;
 }
 
 .error-page {
@@ -751,12 +760,22 @@ figcaption span {
 	filter: grayscale(1);
 }
 
+.theme-mono[data-mono-base="light"] .sad-face {
+	--face-color: #fff;
+	--cheek-color: #6f6f6f;
+	background: #000;
+}
+
 .theme-mono .face-cheek {
 	opacity: 0.35;
 }
 
 .theme-mono .facebox-bottom {
 	color: #111;
+}
+
+.theme-mono[data-mono-base="light"] .facebox-bottom {
+	color: #fff;
 }
 
 .accent-big .face-mouth {
@@ -1057,34 +1076,33 @@ figcaption span {
 	white-space: nowrap;
 }
 
-.theme-mono:not(.theme-color):not(.theme-light) .theme-toggle,
-.theme-mono:not(.theme-color):not(.theme-light) .theme-toggle {
+.theme-mono[data-mono-base="dark"] .theme-toggle {
 	background: #fff;
 	color: #111;
 }
 
-.theme-mono:not(.theme-color):not(.theme-light) .page-title,
-.theme-mono:not(.theme-color):not(.theme-light) .pixel-caption,
-.theme-mono:not(.theme-color):not(.theme-light) .subtext,
-.theme-mono:not(.theme-color):not(.theme-light) .emoji-form,
-.theme-mono:not(.theme-color):not(.theme-light) .emoji-status {
+.theme-mono[data-mono-base="dark"] .page-title,
+.theme-mono[data-mono-base="dark"] .pixel-caption,
+.theme-mono[data-mono-base="dark"] .subtext,
+.theme-mono[data-mono-base="dark"] .emoji-form,
+.theme-mono[data-mono-base="dark"] .emoji-status {
 	color: #e8e8e8;
 }
 
-.theme-mono:not(.theme-color):not(.theme-light) .emoji-input {
+.theme-mono[data-mono-base="dark"] .emoji-input {
 	border-color: #cfcfcf;
 	background: #1a1a1a;
 	color: #f2f2f2;
 }
 
-.theme-mono:not(.theme-color):not(.theme-light) .share-menu-item {
+.theme-mono[data-mono-base="dark"] .share-menu-item {
 	border-color: #d5d5d5;
 	background: #f2f2f2;
 	color: #111;
 }
 
-.theme-mono:not(.theme-color):not(.theme-light) .share-menu-item:hover,
-.theme-mono:not(.theme-color):not(.theme-light) .share-menu-item:focus-visible {
+.theme-mono[data-mono-base="dark"] .share-menu-item:hover,
+.theme-mono[data-mono-base="dark"] .share-menu-item:focus-visible {
 	background: #d9d9d9;
 	color: #111;
 }
@@ -1129,43 +1147,6 @@ figcaption span {
 .theme-mono[data-mono-base="light"] .share-menu-item:focus-visible {
 	background: #2a2a2a;
 	color: #fff;
-}
-
-.theme-mono.theme-light {
-	--page-bg: #0f0f0f;
-	background: var(--page-bg);
-}
-
-.theme-mono.theme-light .page-title,
-.theme-mono.theme-light .pixel-caption,
-.theme-mono.theme-light .subtext,
-.theme-mono.theme-light .emoji-form,
-.theme-mono.theme-light .emoji-status {
-	color: #e8e8e8;
-}
-
-.theme-mono.theme-light .theme-toggle {
-	border-color: #fff;
-	background: #fff;
-	color: #111;
-}
-
-.theme-mono.theme-light .emoji-input {
-	border-color: #cfcfcf;
-	background: #1a1a1a;
-	color: #f2f2f2;
-}
-
-.theme-mono.theme-light .share-menu-item {
-	border-color: #d5d5d5;
-	background: #f2f2f2;
-	color: #111;
-}
-
-.theme-mono.theme-light .share-menu-item:hover,
-.theme-mono.theme-light .share-menu-item:focus-visible {
-	background: #d9d9d9;
-	color: #111;
 }
 
 .emoji-input {
