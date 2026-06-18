@@ -1006,6 +1006,18 @@ figcaption span {
 	flex-wrap: wrap;
 }
 
+.top-actions {
+	width: 100%;
+	padding-bottom: 0.7em;
+	margin-bottom: clamp(1.1em, 2.5vw, 2em);
+}
+
+.top-menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45em;
+}
+
 .share-wrap {
 	margin-top: auto;
 	padding-top: 2em;
@@ -1221,6 +1233,10 @@ figcaption span {
 		width: 100%;
 		min-height: 100vh;
 		padding: 3em 0.8em 1.4em;
+	}
+
+	.top-actions {
+		margin-bottom: 1.3em;
 	}
 
 	.emoji-row {

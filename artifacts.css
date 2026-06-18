@@ -33,7 +33,8 @@ body {
 }
 
 .hero-card,
-.downloads-card {
+.downloads-card,
+.mission-card {
     border: 1px solid rgba(250, 250, 248, 0.15);
     border-radius: 20px;
     background: linear-gradient(150deg, rgba(23, 23, 22, 0.95), rgba(17, 22, 40, 0.84));
@@ -115,8 +116,34 @@ h1 {
     transform: translateX(8%);
     transition: opacity 260ms ease, transform 260ms ease;
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto auto;
+    align-content: start;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+    scrollbar-width: auto;
+    scrollbar-color: rgba(226, 169, 29, 0.95) rgba(28, 40, 95, 0.4);
     pointer-events: none;
+}
+
+.slide::-webkit-scrollbar {
+    width: 12px;
+}
+
+.slide::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, rgba(28, 40, 95, 0.45), rgba(23, 23, 22, 0.55));
+    border-left: 1px solid rgba(250, 250, 248, 0.18);
+}
+
+.slide::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(244, 194, 72, 0.98), rgba(226, 169, 29, 0.95));
+    border-radius: 999px;
+    border: 2px solid rgba(17, 22, 40, 0.5);
+}
+
+.slide::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(250, 213, 114, 1), rgba(233, 178, 49, 1));
 }
 
 .slide.is-active {
@@ -127,8 +154,8 @@ h1 {
 
 .slide-image {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    object-fit: initial;
     background: #ffffff;
 }
 
@@ -186,6 +213,40 @@ h1 {
 
 .downloads-card {
     padding: 1rem 1.15rem;
+}
+
+.mission-card {
+    padding: 1rem 1.15rem;
+}
+
+.mission-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.mission-groups {
+    display: grid;
+    gap: 0;
+}
+
+.mission-block {
+    margin: 0.7rem 0;
+    border: 1px solid rgba(250, 250, 248, 0.18);
+    border-radius: 14px;
+    padding: 0.8rem;
+    background: linear-gradient(130deg, rgba(250, 250, 248, 0.05), rgba(28, 40, 95, 0.18));
+}
+
+.mission-block h3 {
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.02em;
+}
+
+.mission-card p {
+    color: rgba(250, 250, 248, 0.86);
+    max-width: 86ch;
 }
 
 .downloads-head {

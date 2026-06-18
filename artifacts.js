@@ -11,6 +11,9 @@ function renderSlide(index) {
     for (let i = 0; i < slides.length; i += 1) {
         const isActive = i === currentIndex;
         slides[i].classList.toggle('is-active', isActive);
+        if (isActive) {
+            slides[i].scrollTop = 0;
+        }
         dots[i].classList.toggle('is-active', isActive);
         dots[i].setAttribute('aria-selected', String(isActive));
     }
