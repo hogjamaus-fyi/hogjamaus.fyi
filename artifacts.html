@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifacts | hogjamaus.fyi</title>
+    <meta name="description" content="BoaaadD Ministry Recovery artifacts with visual previews and downloadable PDFs.">
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+    <meta name="author" content="hogjamaus.fyi">
+    <link rel="canonical" href="https://hogjamaus.fyi/artifacts">
+
+    <meta property="og:site_name" content="hogjamaus.fyi">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Artifacts | hogjamaus.fyi">
+    <meta property="og:description" content="BoaaadD Ministry Recovery artifacts with visual previews and downloadable PDFs.">
+    <meta property="og:url" content="https://hogjamaus.fyi/artifacts">
+    <meta property="og:image" content="https://hogjamaus.fyi/BoaaadD.png">
+    <meta property="og:image:secure_url" content="https://hogjamaus.fyi/BoaaadD.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="BoaaadD logo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Artifacts | hogjamaus.fyi">
+    <meta name="twitter:description" content="BoaaadD Ministry Recovery artifacts with visual previews and downloadable PDFs.">
+    <meta name="twitter:image" content="https://hogjamaus.fyi/BoaaadD.png">
+    <meta name="twitter:image:alt" content="BoaaadD logo">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#171716">
+
+    <link rel="stylesheet" href="artifacts.css">
+</head>
+<body>
+    <main class="artifacts-page" role="main">
+        <section class="hero-card" aria-labelledby="artifacts-title">
+            <header class="hero-header">
+                <div class="hero-copy">
+                    <p class="eyebrow">BoaaadD Ministry Recovery</p>
+                    <h1 id="artifacts-title">Recovery Artifacts</h1>
+                    <p class="intro">A structured archive of ministry recovery artifacts. Preview each artifact in the carousel, then use the download panel for source documents.</p>
+                </div>
+                <figure class="logo-wrap">
+                    <img src="BoaaadD.png" alt="BoaaadD logo" class="logo-image">
+                </figure>
+            </header>
+
+            <section class="carousel-panel" aria-label="Artifact previews">
+                <div class="carousel" id="artifactCarousel">
+                    <button class="nav-btn prev" id="prevSlide" type="button" aria-label="Previous artifact">&#10094;</button>
+
+                    <div class="slides-wrap" aria-live="polite">
+                        <article class="slide is-active" data-index="0">
+                            <img src="artifacts-previews/artifact-1.jpg" alt="Artifact 1 PDF preview" class="slide-image" loading="lazy">
+                            <div class="slide-meta">
+                                <h2>Artifact 1</h2>
+                                <p>Ministry Recovery v3</p>
+                            </div>
+                        </article>
+                        <article class="slide" data-index="1">
+                            <img src="artifacts-previews/artifact-2.jpg" alt="Artifact 2 PDF preview" class="slide-image" loading="lazy">
+                            <div class="slide-meta">
+                                <h2>Artifact 2</h2>
+                                <p>Ministry Recovery v5</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button class="nav-btn next" id="nextSlide" type="button" aria-label="Next artifact">&#10095;</button>
+                </div>
+
+                <div class="dots" id="carouselDots" role="tablist" aria-label="Select artifact slide">
+                    <button class="dot is-active" type="button" aria-label="Show artifact 1" role="tab" aria-selected="true" data-index="0"></button>
+                    <button class="dot" type="button" aria-label="Show artifact 2" role="tab" aria-selected="false" data-index="1"></button>
+                </div>
+            </section>
+        </section>
+
+        <section class="downloads-card" aria-labelledby="downloads-title">
+            <div class="downloads-head">
+                <h2 id="downloads-title">Artifact Downloads</h2>
+                <p>Ordered by artifact sequence</p>
+            </div>
+            <ol class="download-list" aria-label="Download artifacts">
+                <li class="download-item">
+                    <div class="item-copy">
+                        <h3>Artifact 1: Ministry Recovery v3</h3>
+                        <p>Original PDF source document.</p>
+                    </div>
+                    <a class="download-link" href="boaaadd_ministry_recovery_v3_artifact_1.pdf" download>Download PDF</a>
+                </li>
+                <li class="download-item">
+                    <div class="item-copy">
+                        <h3>Artifact 2: Ministry Recovery v5</h3>
+                        <p>Original PDF source document.</p>
+                    </div>
+                    <a class="download-link" href="boaaadd_ministry_recovery_v5_artifact_2.pdf" download>Download PDF</a>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <script src="artifacts.js"></script>
+</body>
+</html>

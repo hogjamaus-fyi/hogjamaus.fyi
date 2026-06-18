@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --coal: #171716;
+    --midnight: #1c285f;
+    --bronze: #956529;
+    --gold: #e2a91d;
+    --linen: #fafaf8;
+    --paper: #f2eee4;
+    --ink: #12131a;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", "Trebuchet MS", "Avenir Next", sans-serif;
+    color: var(--linen);
+    background:
+        radial-gradient(circle at 12% 18%, rgba(226, 169, 29, 0.2), transparent 42%),
+        radial-gradient(circle at 88% 10%, rgba(28, 40, 95, 0.45), transparent 50%),
+        linear-gradient(155deg, #0f1014, #171716 32%, #23231f 100%);
+    line-height: 1.5;
+}
+
+.artifacts-page {
+    width: min(1140px, 100% - 2.4rem);
+    margin: 2.2rem auto 2.8rem;
+    display: grid;
+    gap: 1.4rem;
+}
+
+.hero-card,
+.downloads-card {
+    border: 1px solid rgba(250, 250, 248, 0.15);
+    border-radius: 20px;
+    background: linear-gradient(150deg, rgba(23, 23, 22, 0.95), rgba(17, 22, 40, 0.84));
+    backdrop-filter: blur(2px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card {
+    padding: 1.4rem 1.4rem 1.1rem;
+}
+
+.hero-header {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    margin-bottom: 0.4rem;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.intro {
+    color: rgba(250, 250, 248, 0.86);
+    max-width: 65ch;
+}
+
+.logo-wrap {
+    border: 1px solid rgba(250, 250, 248, 0.2);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(250, 250, 248, 0.05), rgba(226, 169, 29, 0.1));
+    padding: 0.7rem;
+}
+
+.logo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.carousel-panel {
+    border-top: 1px solid rgba(250, 250, 248, 0.12);
+    padding-top: 1rem;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.slides-wrap {
+    position: relative;
+    min-height: clamp(300px, 50vw, 620px);
+    border: 1px solid rgba(250, 250, 248, 0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(150deg, rgba(17, 22, 40, 0.6), rgba(23, 23, 22, 0.9));
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(8%);
+    transition: opacity 260ms ease, transform 260ms ease;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    pointer-events: none;
+}
+
+.slide.is-active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+.slide-meta {
+    background: linear-gradient(90deg, rgba(28, 40, 95, 0.95), rgba(149, 101, 41, 0.95));
+    padding: 0.7rem 0.9rem;
+}
+
+.slide-meta h2 {
+    font-size: 1.05rem;
+}
+
+.slide-meta p {
+    font-size: 0.9rem;
+    color: rgba(250, 250, 248, 0.86);
+}
+
+.nav-btn {
+    border: 1px solid rgba(250, 250, 248, 0.28);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(250, 250, 248, 0.1), rgba(226, 169, 29, 0.12));
+    color: var(--linen);
+    font-size: 1.35rem;
+    cursor: pointer;
+    transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.nav-btn:hover,
+.nav-btn:focus-visible {
+    transform: scale(1.05);
+    border-color: var(--gold);
+    outline: none;
+}
+
+.dots {
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.42rem;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(250, 250, 248, 0.5);
+    background: rgba(250, 250, 248, 0.15);
+    cursor: pointer;
+}
+
+.dot.is-active {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.downloads-card {
+    padding: 1rem 1.15rem;
+}
+
+.downloads-head {
+    margin-bottom: 0.6rem;
+}
+
+.downloads-head h2 {
+    font-size: 1.2rem;
+}
+
+.downloads-head p {
+    color: rgba(250, 250, 248, 0.73);
+    font-size: 0.92rem;
+}
+
+.download-list {
+    list-style: decimal;
+    list-style-position: inside;
+    max-height: 285px;
+    overflow-y: auto;
+    padding-right: 0.35rem;
+}
+
+.download-item {
+    margin: 0.7rem 0;
+    border: 1px solid rgba(250, 250, 248, 0.18);
+    border-radius: 14px;
+    padding: 0.8rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(130deg, rgba(250, 250, 248, 0.05), rgba(28, 40, 95, 0.18));
+}
+
+.item-copy h3 {
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+}
+
+.item-copy p {
+    color: rgba(250, 250, 248, 0.82);
+    font-size: 0.9rem;
+}
+
+.download-link {
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--gold);
+    font-weight: 700;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.download-link:hover,
+.download-link:focus-visible {
+    background: #f4c248;
+    outline: none;
+}
+
+@media (max-width: 880px) {
+    .hero-header {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-wrap {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .artifacts-page {
+        width: min(100% - 1rem, 1140px);
+        margin-top: 0.8rem;
+    }
+
+    .hero-card {
+        padding: 0.8rem;
+    }
+
+    .carousel {
+        grid-template-columns: 34px 1fr 34px;
+        gap: 0.4rem;
+    }
+
+    .slides-wrap {
+        min-height: 255px;
+    }
+
+    .download-item {
+        grid-template-columns: 1fr;
+    }
+}
