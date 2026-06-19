@@ -159,6 +159,15 @@ h1 {
     background: #ffffff;
 }
 
+.slide-stack {
+    display: grid;
+    align-content: start;
+}
+
+.slide-stack .slide-image + .slide-image {
+    border-top: 1px solid rgba(18, 19, 26, 0.16);
+}
+
 .slide-meta {
     background: linear-gradient(90deg, rgba(28, 40, 95, 0.95), rgba(149, 101, 41, 0.95));
     padding: 0.7rem 0.9rem;
@@ -302,6 +311,13 @@ h1 {
     white-space: nowrap;
 }
 
+.download-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.45rem;
+}
+
 .download-link:hover,
 .download-link:focus-visible {
     background: #f4c248;
@@ -339,5 +355,9 @@ h1 {
 
     .download-item {
         grid-template-columns: 1fr;
+    }
+
+    .download-actions {
+        justify-content: flex-start;
     }
 }
