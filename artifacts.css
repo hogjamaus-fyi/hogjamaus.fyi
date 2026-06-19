@@ -159,6 +159,18 @@ h1 {
     background: #ffffff;
 }
 
+.slide-image--artifact-3 {
+    filter: none;
+}
+
+@media (min-width: 860px) {
+    .slide-image--artifact-3 {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
 .slide-stack {
     display: grid;
     align-content: start;
