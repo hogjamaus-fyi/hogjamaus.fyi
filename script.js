@@ -76,7 +76,7 @@ const goodProphetSaintGodBaseNames = [
   "indra", "agni", "varuna", "yama", "surya", "chandra", "skanda", "murugan", "arjuna", "buddha",
   "amitabha", "avalokiteshvara", "guan yin", "tara", "manjushri", "zeus", "hera", "poseidon", "athena", "apollo",
   "artemis", "aphrodite", "hephaestus", "hermes", "demeter", "hestia", "dionysus", "persephone", "odin", "thor",
-  "freya", "freyr", "tyr", "baldr", "heimdall", "ra", "osiris", "isis", "horus", "anubis",
+  "freya", "freyr", "tyr", "baldr", "heimdall", "ra", "osiris", "isis", "horus", "anubis", "muhammad", "mohammed", "mohammad", "mohamed",
   "ptah", "amaterasu", "susanoo", "inari", "izanagi", "izanami", "quetzalcoatl", "viracocha", "inti", "saint peter",
   "saint paul", "saint francis", "saint anthony", "saint michael", "moses", "abraham", "noah", "isaiah", "jeremiah", "ezekiel",
   "saint therese", "saint augustine", "saint thomas", "saint benedict", "saint patrick", "saint nicholas", "saint george", "saint catherine", "saint christopher", "saint jude",
