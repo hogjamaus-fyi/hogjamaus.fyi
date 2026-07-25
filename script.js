@@ -72,15 +72,15 @@ const heroGoodGuyBaseNames = [
 
 const goodProphetSaintGodBaseNames = [
   "jesus", "mary", "joseph", "muhammad", "allah", "yahweh", "adonai", "elohim", "brahma", "vishnu",
-  "shiva", "krishna", "rama", "hanuman", "ganesha", "durga", "kali", "saraswati", "lakshmi", "parvati",
-  "indra", "agni", "varuna", "yama", "surya", "chandra", "skanda", "murugan", "arjuna", "buddha",
-  "amitabha", "avalokiteshvara", "guan yin", "tara", "manjushri", "zeus", "hera", "poseidon", "athena", "apollo",
-  "artemis", "aphrodite", "hephaestus", "hermes", "demeter", "hestia", "dionysus", "persephone", "odin", "thor",
-  "freya", "freyr", "tyr", "baldr", "heimdall", "ra", "osiris", "isis", "horus", "anubis", "muhammad", "mohammed", "mohammad", "mohamed",
-  "ptah", "amaterasu", "susanoo", "inari", "izanagi", "izanami", "quetzalcoatl", "viracocha", "inti", "saint peter",
+  "shiva", "krishna", "rama", "hanuman", "ganesha", "durga", "saraswati", "lakshmi", "parvati",
+  "agni", "varuna", "surya", "chandra", "murugan", "arjuna", "buddha",
+  "amitabha", "avalokiteshvara", "guan yin", "tara", "manjushri", "zeus", "athena", "apollo",
+  "artemis", "atlas", "hephaestus", "hermes", "hestia", "dionysus", "persephone", "odin", "thor",
+  "freya", "freyr", "baldr", "heimdall", "ra", "horus", "mohammed", "mohammad", "mohamed",
+  "ptah", "amaterasu", "susanoo", "inari", "izanami", "quetzalcoatl", "viracocha", "inti", "saint peter",
   "saint paul", "saint francis", "saint anthony", "saint michael", "moses", "abraham", "noah", "isaiah", "jeremiah", "ezekiel",
   "saint therese", "saint augustine", "saint thomas", "saint benedict", "saint patrick", "saint nicholas", "saint george", "saint catherine", "saint christopher", "saint jude",
-  "saint clare", "saint monica", "saint rita", "saint lucy", "saint sebastian", "saint john", "saint mary magdalene", "saint josemaria", "saint maximilian", "saint padre pio"
+  "saint clare", "saint monica", "saint lucy", "saint sebastian", "saint john", "saint mary", "saint josemaria", "saint maximilian", "saint padre pio"
 ];
 
 const top200Languages = [
